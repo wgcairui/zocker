@@ -22,29 +22,14 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Setup Pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.9.0
-
       - name: Setup Node.js 22
         uses: actions/setup-node@v3
         with:
           node-version: 22
-          cache: "pnpm"
 
         # Conditional steps based on the check
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
-
-      - run: pnpm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN}}
+        run: npm install
 
       - name: Build
-        run: pnpm build
-
-      - name: Publish packages
-        run: pnpm publish -r --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+        run: npm build

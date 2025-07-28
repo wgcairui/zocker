@@ -1,14 +1,39 @@
 {
-	"name": "zocker-monorepo",
-	"private": true,
+	"name": "cairui-zocker-fork",
+	"description": "Generate realistic test-data from your Zod-Schemas",
+	"version": "0.0.1",
+	"author": "Loris Sigrist",
+	"license": "MIT",
+	"keywords": [
+		"mock-data",
+		"zod"
+	],
+	"type": "module",
+	"main": "dist/index.cjs",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/LorisSigrist/zocker.git"
+	},
+	"homepage": "https://zocker.sigrist.dev",
 	"scripts": {
-		"changeset": "changeset",
-		"format": "prettier --write .",
-		"test": "pnpm -r run test",
-		"build": "pnpm -r run build"
+		"build": "tsdown --dts --format cjs --format esm",
+		"check": "tsc --noEmit",
+		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.29.4",
-		"prettier": "^2.8.8"
+		"tsdown": "^0.12.9",
+		"typescript": "^5.3.3"
+	},
+	"files": [
+		"dist"
+	],
+	"peerDependencies": {
+		"zod": "^4.0.10"
+	},
+	"dependencies": {
+		"@faker-js/faker": "^9.8.0",
+		"randexp": "^0.5.3"
 	}
 }
