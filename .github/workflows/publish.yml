@@ -4,7 +4,7 @@ name: Publish NPM Packages
 # This should usually happen as a response to Changeste's `Version Packages PR` being mergeed
 
 on:
-  pull_request:
+  push:
     branches: [main]
 
 jobs:
