@@ -195,7 +195,7 @@ export const any: StringKindGenerator = (ctx, lc, cc, td) => {
 };
 
 function color(): string {
-	const generators = [faker.color.human, faker.internet.color];
+	const generators = [faker.color.human, faker.color.rgb];
 
 	return pick(generators)();
 }

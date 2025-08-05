@@ -1,8 +1,7 @@
 {
-	"name": "zocker",
+	"name": "zocker-1m",
 	"description": "Generate realistic test-data from your Zod-Schemas",
-	"version": "2.2.0",
-	"author": "Loris Sigrist",
+	"version": "0.0.7",
 	"license": "MIT",
 	"keywords": [
 		"mock-data",
