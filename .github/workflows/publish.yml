@@ -4,14 +4,8 @@ name: Publish NPM Packages
 # This should usually happen as a response to Changeste's `Version Packages PR` being mergeed
 
 on:
-  workflow_dispatch:
-
-  # trigger this workflow when the CI workflow is completed
-  workflow_run:
-    workflows: ["Continuous Integration"]
-    branches: [main]
-    types:
-      - completed
+  pull_request:
+    branches: [main, release]
 
 jobs:
   publish:
